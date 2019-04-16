@@ -1,12 +1,14 @@
 train_root: '../data'
 test_root: '../data'
 log_file: '../log/test.log'
-model_file: '../data/model/m.pt'
+model_file: '../data/model/NetPlusPlusNew_ep6_001.pt'
+plt_file: '../data/plt/NetPlusPlusNew_ep6_001.csv'
 
 download_mnist: 0
 use_gpu: 1
 save_model: 0
+draw: 1
 
 batch_size: 64
 learning_rate: 0.001
-epoch: 1
+epoch: 5

@@ -63,6 +63,13 @@ class DecisionTree:
 
         return gain
 
+def linearR(data, label):
+    ones = np.ones((data.shape[0], 1))
+    data = np.c_[data, ones]
+    xx = np.dot(data.T, data)
+    w = np.dot(np.linalg.pinv(xx), np.dot(data.T, label))
+    print(w)
+
 if __name__ == '__main__':
     data = np.array([[24, 53, 23, 25, 32, 52, 22, 43, 52, 48], [40, 52, 25, 77, 48, 110, 38, 44, 27, 65]], dtype=float)
     label = np.array([1, 0, 0, 1, 1, 1, 1, 0, 0, 1], dtype=int)
@@ -72,5 +79,6 @@ if __name__ == '__main__':
     data3 = np.array([[53, 52, 43, 48], [52, 110, 44, 65]], dtype=float)
     label4 = np.array([1, 1], dtype=int)
     data4 = np.array([[52, 48], [110, 65]], dtype=float)
-    handler = DecisionTree(data3, label3)
-    handler.buildTree()
+    # handler = DecisionTree(data3, label3)
+    # handler.buildTree()
+    linearR(data.T, label.T)

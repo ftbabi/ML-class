@@ -19,6 +19,8 @@ class DataConfig:
         self.learning_rate = content['learning_rate']
         self.epoch = content['epoch']
         self.use_gpu = bool(content['use_gpu'])
+        self.draw = bool(content['draw'])
+        self.plt_file = content['plt_file']
 
 
         if not os.path.isdir(self.test_root):
@@ -60,6 +62,12 @@ class DataConfig:
 
     def getModelFile(self):
         return self.model_file
+
+    def getDraw(self):
+        return self.draw
+
+    def getPltFile(self):
+        return self.plt_file
 
 if __name__ == '__main__':
     row = 'a,s,b'
